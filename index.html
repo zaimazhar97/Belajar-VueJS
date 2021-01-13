@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VueJS Training</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <span v-bind:title="masatitle">Check Masa (Letak Mouse Dekat Saya)</span>
+        <ul>
+            <li v-for="insan in insans">
+                {{ insan.nama }}
+            </li>
+        </ul>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
