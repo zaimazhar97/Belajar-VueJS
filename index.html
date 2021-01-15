@@ -11,18 +11,35 @@
     li {
         margin: 20px;
     }
+
+    .box {
+        padding: 50px;
+    }
 </style>
 
 <body>
     <div id="app">
+        <h2>{{ kira }}</h2>
+        <button v-on:click="berhenti_kira"><span v-if="this.intervalKiraStatus">Berhenti mengira</span><span v-else>Sambung Kira</span></button><br>
         <span v-bind:title="masatitle">Check Masa (Letak Mouse Dekat Saya)</span>
         <ul>
             <li v-for="insan in insans">
                 {{ insan.nama }} - {{ insan.kuantiti }}
                 <span v-if="insan.kuantiti === 0">(TIADA STOCK)</span>
-                <button v-on:click="insan.kuantiti++">TAMBAH PRODUK {{ insan.nama }}</button>
+                <span v-else><button v-on:click="insan.kuantiti--">{{ insan.nama }}-</button></span>
+                <button v-on:click="insan.kuantiti++">{{ insan.nama }}+</button>
             </li>
         </ul>
+        <div class="box">
+            <p>{{ ayat_terbalik }}</p>
+            <button v-on:click="terbalikkan">Terbalikkan Ayat</button>
+        </div>
+        <div class="box-1">
+            <h3>{{ nilai_borang }}</h3>
+            <p>{{ borang }}</p>
+            <input type="text" v-model="borang">
+            <button v-on:click="hantar_borang">Update</button>
+        </div>
     </div>
     <script src="index.js"></script>
 </body>
