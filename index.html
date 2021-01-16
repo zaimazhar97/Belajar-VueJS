@@ -3,19 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>VueJS Training</title>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 </head>
-
-<style>
-    li {
-        margin: 20px;
-    }
-
-    .box {
-        padding: 50px;
-    }
-</style>
 
 <body>
     <div id="app">
@@ -30,15 +21,21 @@
                 <button v-on:click="insan.kuantiti++">{{ insan.nama }}+</button>
             </li>
         </ul>
+        <br><br>
+        <h3>Data dari <a href="https://jsonplaceholder.typicode.com/">jsonplaceholder</a></h3>
+        <ol>
+            <li v-for="post in posting">
+                {{ post.title }} - <b>User ID : {{ post.userId }}</b>
+            </li>
+        </ol>
         <div class="box">
             <p>{{ ayat_terbalik }}</p>
             <button v-on:click="terbalikkan">Terbalikkan Ayat</button>
-        </div>
-        <div class="box-1">
-            <h3>{{ nilai_borang }}</h3>
+            <br><br>
+            <h2>{{ nilai_borang }}</h2>
             <p>{{ borang }}</p>
             <input type="text" v-model="borang">
-            <button v-on:click="hantar_borang">Update</button>
+            <button v-bind:class="tukar_kelas" v-on:click="hantar_borang">Update</button>
         </div>
     </div>
     <script src="index.js"></script>

@@ -1,6 +1,7 @@
 var app = new Vue({
     el: '#app',
     data: {
+        posting: null,
         insans: [
             {
                 nama: 'kasut A',
@@ -23,7 +24,12 @@ var app = new Vue({
         borang: "Borang",
         nilai_borang: "",
         kira: 0,
-        intervalKiraStatus: true
+        intervalKiraStatus: true,
+        tukar_kelas: [
+            'btn',
+            'bg-btn',
+            'btn-text',
+        ]
     },
     methods: {
         terbalikkan: function() {
@@ -39,6 +45,11 @@ var app = new Vue({
                 this.intervalKiraStatus = true
             }
         },
+    },
+    created() {
+        fetch('https://jsonplaceholder.typicode.com/posts')
+        .then(res => res.json())
+        .then(data => { this.posting = data.slice(0, 5) })
     },
     beforeMount() {
         this.intervalKira = setInterval( () => {
