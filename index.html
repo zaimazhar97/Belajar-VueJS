@@ -37,6 +37,9 @@
             <input type="text" v-model="borang">
             <button v-bind:class="tukar_kelas" v-on:click="hantar_borang">Update</button>
         </div>
+        <ol>
+            <todo-item v-for="grocery in groceries" v-bind:todo="grocery" v-bind:key="grocery.id"></todo-item>
+        </ol>
     </div>
     <script src="index.js"></script>
 </body>

@@ -1,7 +1,17 @@
+Vue.component('todo-item', {
+    props: ['todo'],
+    template: '<li>{{ todo.nama }}</li>'
+})
+
 var app = new Vue({
     el: '#app',
     data: {
         posting: null,
+        groceries: [
+            { id:1, nama: "devzaim" },
+            { id:2, nama: "Muhammad Zaim" },
+            { id:3, nama: "Nur'Aisyah Rifhan" }
+        ],
         insans: [
             {
                 nama: 'kasut A',
