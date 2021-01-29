@@ -10,7 +10,7 @@ var app = new Vue({
         groceries: [
             { id:1, nama: "devzaim" },
             { id:2, nama: "Muhammad Zaim" },
-            { id:3, nama: "Nur'Aisyah Rifhan" }
+            { id:3, nama: "zaimazhar" }
         ],
         insans: [
             {
