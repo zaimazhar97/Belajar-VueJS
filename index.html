@@ -43,6 +43,11 @@
         <br>
         <p>{{ namabaru }}</p>
         <input type="text" v-on:keyup.enter="tambahnama" v-model="namabaru">
+        <br>
+        <p v-if="this.insan_nama !== null">Hurmm...</p>
+        <p v-else>Tulis jenama kasut yang baru</p>
+        <br>
+        <input type="text" v-on:keyup.enter="kemaskini_insan" v-on:keyup="checkInsanNama" v-model="insan_nama">
     </div>
     <script src="index.js"></script>
 </body>

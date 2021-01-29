@@ -34,6 +34,8 @@ var app = new Vue({
         borang: "Borang",
         namabaru: null,
         nilai_borang: "",
+        insan_nama: null,
+        periksa: false,
         kira: 0,
         intervalKiraStatus: true,
         tukar_kelas: [
@@ -61,6 +63,23 @@ var app = new Vue({
                 id: this.groceries.length + 1,
                 nama: this.namabaru
             })
+        },
+        kemaskini_insan: function() {
+            this.insans.push({
+                nama: this.insan_nama,
+                harga: this.getRandomInt(50),
+                kuantiti: this.getRandomInt(10)
+            })
+            
+            this.insan_nama = null
+        },
+        getRandomInt: function(max) {
+            return Math.floor(Math.random() * Math.floor(max));
+        },
+        checkInsanNama: function() {
+            if(this.insan_nama.length === 0) {
+                this.insan_nama = null
+            }
         }
     },
     created() {
