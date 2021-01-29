@@ -40,6 +40,9 @@
         <ol>
             <todo-item v-for="grocery in groceries" v-bind:todo="grocery" v-bind:key="grocery.id"></todo-item>
         </ol>
+        <br>
+        <p>{{ namabaru }}</p>
+        <input type="text" v-on:keyup.enter="tambahnama" v-model="namabaru">
     </div>
     <script src="index.js"></script>
 </body>

@@ -32,6 +32,7 @@ var app = new Vue({
         masatitle: 'Dimasukkan pada ' + new Date().toLocaleString(),
         ayat_terbalik: 'Terbalikkan Saya',
         borang: "Borang",
+        namabaru: null,
         nilai_borang: "",
         kira: 0,
         intervalKiraStatus: true,
@@ -55,6 +56,12 @@ var app = new Vue({
                 this.intervalKiraStatus = true
             }
         },
+        tambahnama: function() {
+            this.groceries.push({
+                id: this.groceries.length + 1,
+                nama: this.namabaru
+            })
+        }
     },
     created() {
         fetch('https://jsonplaceholder.typicode.com/posts')
