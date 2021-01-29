@@ -1,6 +1,6 @@
 Vue.component('todo-item', {
     props: ['todo'],
-    template: '<li>{{ todo.nama }}</li>'
+    template: '<li><strong>{{ todo.nama }}</strong></li>'
 })
 
 var app = new Vue({
