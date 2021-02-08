@@ -38,7 +38,7 @@
             <button v-bind:class="tukar_kelas" v-on:click="hantar_borang">Update</button>
         </div>
         <ol>
-            <todo-item v-for="grocery in groceries" v-bind:todo="grocery" v-bind:key="grocery.id"></todo-item>
+            <todo-item v-for="grocery in groceries" v-bind:jumlah="grocery.duit" v-bind:todo="grocery" v-bind:key="grocery.id"></todo-item>
         </ol>
         <br>
         <p>{{ namabaru }}</p>
@@ -48,6 +48,8 @@
         <p v-else>Tulis jenama kasut yang baru</p>
         <br>
         <input type="text" v-on:keyup.enter="kemaskini_insan" v-on:keyup="checkInsanNama" v-model="insan_nama">
+        <br><br>
+        {{ teruskedepan ? 'Nak cikit' : 'taknak ah majok' }}
     </div>
     <script src="index.js"></script>
 </body>

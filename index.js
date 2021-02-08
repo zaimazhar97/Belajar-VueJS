@@ -1,16 +1,18 @@
 Vue.component('todo-item', {
-    props: ['todo'],
-    template: '<li><strong>{{ todo.nama }}</strong></li>'
+    props: ['todo', 'jumlah'],
+    template: '<li><strong>{{ todo.nama }} mempunyai wang sebanyak {{ jumlah }}</strong></li>'
 })
+
+
 
 var app = new Vue({
     el: '#app',
     data: {
         posting: null,
         groceries: [
-            { id:1, nama: "devzaim" },
-            { id:2, nama: "Muhammad Zaim" },
-            { id:3, nama: "zaimazhar" }
+            { id:1, nama: "devzaim", duit: 3000 },
+            { id:2, nama: "Muhammad Zaim", duit: 2411 },
+            { id:3, nama: "zaimazhar", duit: 230 }
         ],
         insans: [
             {
@@ -31,6 +33,7 @@ var app = new Vue({
         ],
         masatitle: 'Dimasukkan pada ' + new Date().toLocaleString(),
         ayat_terbalik: 'Terbalikkan Saya',
+        teruskedepan: true,
         borang: "Borang",
         namabaru: null,
         nilai_borang: "",
@@ -61,7 +64,8 @@ var app = new Vue({
         tambahnama: function() {
             this.groceries.push({
                 id: this.groceries.length + 1,
-                nama: this.namabaru
+                nama: this.namabaru,
+                duit: this.getRandomInt(5000)
             })
         },
         kemaskini_insan: function() {
